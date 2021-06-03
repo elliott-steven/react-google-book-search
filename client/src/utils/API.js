@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export default {
+const apiFunction = 
+{
     getBook: function (query) {
         return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
     },
@@ -20,3 +21,5 @@ export default {
         return axios.get("/api/books").then(result => result.data);
     }
 };
+
+export default apiFunction
