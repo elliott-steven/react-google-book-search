@@ -34,7 +34,7 @@ class Results extends Component {
         return (
             <div>
                 {!this.props.books.length ? (
-                    <h1 className="text-center">No Results to Display</h1>
+                    <h1 className="text-center">No Saved Books to Display</h1>
                 ) : (
                     <div>
                         {this.props.books.map(result => (
@@ -48,7 +48,7 @@ class Results extends Component {
                                             <h5 className="card-title">{result.title} by {result.authors}</h5>
                                             <p className="card-text">{result.description}</p>
                                             <div>
-                                                <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" >View</a>
+                                                <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" rel="noreferrer" >View</a>
                                                 <button onClick={() => this.handleSave(result)} className="btn badge-pill btn-outline-warning mt-3 ml-3" >
                                                     {this.state.savedBooks.map(book => book._id).includes(result._id) ? "Unsave" : "Save"}
                                                 </button>
